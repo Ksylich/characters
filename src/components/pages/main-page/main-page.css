@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise&display=swap');
+.body {
+  position: absolute;
+  width: 375px;
+  height: 736px;
+  left: 0px;
+  top: 0px;
+
+  background: #ffffff;
+}
+
+.logo {
+  /* COOL LOGO */
+
+  position: absolute;
+  width: 300px;
+  height: 89px;
+  left: calc(55% - 332px / 2);
+  top: 6px;
+
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 70px;
+  line-height: 132px;
+
+  color: #93c2ed;
+}
+
+.slogan {
+  /* “not trivial slogan” */
+
+  position: absolute;
+  width: 303px;
+  height: 31px;
+  left: 120px;
+  top: 127px;
+
+  font-family: Vollkorn;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 39px;
+
+  color: #93c2ed;
+}
+
+.top-line {
+  /* Line */
+
+  position: absolute;
+  width: 275px;
+  height: 0px;
+  left: 45.92px;
+  top: 212.8px;
+
+  border: 1px solid #93c2ed;
+}
+
+.first-text {
+  /* Today I will teach you how to  create a character in computer  games */
+
+  position: absolute;
+  width: 333px;
+  height: 116px;
+  left: 37px;
+  top: 236px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #716868;
+}
+
+.middle-line {
+  /* Line */
+
+  position: absolute;
+  width: 275px;
+  height: 0px;
+  left: 45.92px;
+  top: 366.39px;
+
+  border: 1px solid #93c2ed;
+  transform: rotate(-4deg);
+}
+
+.second-text {
+  /* I'm sure you already know how but can you create a character  creator? */
+
+  position: absolute;
+  width: 324px;
+  height: 84px;
+  left: 43px;
+  top: 400px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #716868;
+}
+
+.bottom-line {
+  /* Line */
+
+  position: absolute;
+  width: 275px;
+  height: 0px;
+  left: 45.92px;
+  top: 501.8px;
+
+  border: 1px solid #93c2ed;
+}
+
+.l-start-box {
+  /* Rectangle 2 */
+
+  position: absolute;
+  width: 230px;
+  height: 75px;
+  left: 75px;
+  top: 560px;
+  background: #93c2ed;
+}
+
+.l-start {
+  /* Lets start */
+
+  position: absolute;
+  left: 21%;
+  right: 16.52%;
+  top: 21.33%;
+  bottom: 22.67%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #ffffff;
+}
