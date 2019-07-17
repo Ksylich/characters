@@ -1,0 +1,73 @@
+.avatar-container {
+  width: 375px;
+  height: 430px;
+  /* background-color: red; */
+}
+.avatar {
+  width: 90%;
+  height: 100%;
+  margin-left: 10%;
+}
+
+.text {
+  width: 337px;
+  height: 28px;
+  margin-left: 5%;
+  margin-top: 5%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #716868;
+}
+
+.radio-croup {
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.group {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1em;
+}
+
+.radio {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #716868;
+}
+
+.next-btn-box {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin-left: 70%;
+
+  background: #93c2ed;
+  
+  width: 90px;
+}
+.next {
+  margin: 5px 0px 5px 11px;
+ 
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #ffffff;
+}
+
+.btn-img{
+  margin-top: 8px ;
+  margin-left: 5px;
+}

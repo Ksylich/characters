@@ -8,7 +8,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export type ChSatate = ReturnType<typeof reducer>;
+export type ChState = ReturnType<typeof reducer>;
 
 const store = createStore(
     reducer,

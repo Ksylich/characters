@@ -1,7 +1,11 @@
-export default interface ICharactersState {
+export interface ICharacter {
     race: string;
     class: string;
-    theme: string;
-    background: string;
 }
 
+export  interface ICharactersState {
+    character: ICharacter;
+    theme: string;
+    background: string;
+    operationType: string;
+}
