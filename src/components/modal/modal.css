@@ -18,7 +18,8 @@
 }
 
 .modal-header {
-  width: 92px;
+  /* width: 92px; */
+  display: inline-block;
   height: 35px;
   margin-left: 22px;
   margin-top: 17px;

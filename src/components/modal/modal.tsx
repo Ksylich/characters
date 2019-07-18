@@ -7,19 +7,19 @@ import "./modal.css";
 interface IProps {
   isOpen: boolean;
   onGotIt: (event: any) => void;
+  text: any;
 }
-
-const Modal: React.FC<IProps> = ({ isOpen, onGotIt }) => {
+const Modal: React.FC<IProps> = ({ isOpen, onGotIt, text }) => {
   return (
     <>
       {isOpen && (
         <Portal>
           <div className="modal-overlay">
             <div className="modal-window">
-              <div className="modal-header">The first:</div>
-              <div className="modal-body">Race</div>
+              <div className="modal-header">{text.number}</div>
+              <div className="modal-body">{text.type}</div>
               <div className="modal-foorter">
-                Everyone is crazy about it now...
+                {text.description}
               </div>
               <div className="got-btn-container" onClick={onGotIt}>
                 <div className="got-btn">Got it</div>{" "}
