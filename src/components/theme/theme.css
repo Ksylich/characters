@@ -1,0 +1,51 @@
+.theme-content {
+  position: absolute;
+  width: 375px;
+  height: 323px;
+  left: 0px;
+  top: 344px;
+  background: #FFF9F9;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.theme-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5em;
+}
+
+.theme-radio-croup {
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+#b-ground {
+  margin-top: 3%;
+}
+
+.color-box {
+  position: absolute;
+  top: 90px;
+  left: 145px;
+}
+
+.save-btn-box {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin-left: 7%;
+  margin-top: 130px;
+  background: #93c2ed;
+  width: 90px;
+}
+
+.save {
+  margin: 5px 0px 5px 7px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #ffffff;
+}

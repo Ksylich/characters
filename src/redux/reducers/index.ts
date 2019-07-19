@@ -8,9 +8,9 @@ const initialState: ICharactersState = {
     race: "Human",
     class: "Warrior",
   },
-  theme: "day",
+  theme: "#FFF9F9",
   background: "#FAFDFB",
-  operationType: "race",
+  operationType: "theme",
 };
 
 const reducer = createReducer(
@@ -28,6 +28,24 @@ const reducer = createReducer(
   [actions.changeOperationTypeReducer as any]: (state, payload) => ({
     ...state,
     operationType: payload,
+  }),
+  [actions.changeCharacterClassReducer as any]: (state, payload) => {
+    const { character } = state;
+    return {
+      ...state,
+      character: {
+        race: character.race,
+        class: payload,
+      },
+    };
+  },
+  [actions.changeBackgroundReducer as any]: (state, payload) => ({
+    ...state,
+    background: payload,
+  }),
+  [actions.changeThemeReducer as any]: (state, payload) => ({
+    ...state,
+    theme: payload,
   }),
 }, initialState);
 

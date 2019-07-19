@@ -17,6 +17,7 @@ import Human from "../../assets/avatars/human.png";
 import data from "../../data";
 import { ChState } from "../../redux/store";
 import { ICharacter } from "../../redux/types";
+import Theme from "../theme";
 import CreateCharacter from "./create-character";
 
 interface IProps {
@@ -28,24 +29,31 @@ class CreateCharacterContainer extends Component<IProps> {
     public render() {
 
         const { operationType, character } = this.props;
-        let avatars = [Human, Elf, Dwarf];
-        let windowText;
+        if (operationType !== "theme") {
+            let avatars = [Human, Elf, Dwarf];
+            let windowText;
+            let showBack = false;
 
-        if (operationType === "class") {
-            switch (character.race) {
-                case "Human":
-                avatars = [Human_Warrior, Human_With_Bow, Human_Mag];
-                break;
-                case "Elf":
-                avatars = [Elf_Warrior, Elf_With_Bow, Elf_Mag];
-                break;
-                case "Dwarf":
-                avatars = [Dwarf_Warrior, Dwarf_With_Bow, Dwarf_Mag];
-                break;
+            if (operationType === "class") {
+                showBack = true;
+                switch (character.race) {
+                    case "Human":
+                        avatars = [Human_Warrior, Human_With_Bow, Human_Mag];
+                        break;
+                    case "Elf":
+                        avatars = [Elf_Warrior, Elf_With_Bow, Elf_Mag];
+                        break;
+                    case "Dwarf":
+                        avatars = [Dwarf_Warrior, Dwarf_With_Bow, Dwarf_Mag];
+                        break;
+                }
             }
+            windowText = data.getWindowText(operationType, character.race);
+            return <CreateCharacter avatars={avatars} text={windowText} showBack={showBack} />;
+        } else {
+            return <Theme avatar={Dwarf_Warrior}/>;
         }
-        windowText = data.getWindowText(operationType);
-        return <CreateCharacter avatars={avatars} text={windowText} />;
+
     }
 }
 

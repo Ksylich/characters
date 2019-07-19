@@ -1,11 +1,7 @@
 class Data {
-  public Human = {
-    warrior: "Original",
-  };
-  public Elf = {};
-  public Dwarf = {
-    warrior: "Classic",
-  };
+  public Human = [[`"Original"`], [], []];
+  public Elf = [[], [`"Original"`], []];
+  public Dwarf = [["Classic"], [], ["LOL really?"]];
   public First = {
     modalText: {
       number: "The first",
@@ -14,7 +10,7 @@ class Data {
     },
     instruction: "Choose a race from the options:",
     radioText: ["Human", "Elf", "Dwarf"],
-    choise: [
+    choice: [
       [`Seriously?`, `Human?`, `You are human in real life... `],
       [`Elf?`, `Are you gay?`],
       ["Good choice."],
@@ -28,11 +24,7 @@ class Data {
     },
     instruction: "Choose a class from the options:",
     radioText: ["Warrior", "Dude with bow", "Mage"],
-    choise: [
-      [`Seriously?`, `Human?`, `You are human in real life... `],
-      [`Elf?`, `Are you gay?`],
-      ["Good choice."],
-    ],
+    choice: [[`"Original"`]],
   };
   public Third = {
     number: null,
@@ -40,10 +32,24 @@ class Data {
     description: "Left a little just choose settings",
   };
 
-  public getWindowText = (operation: string) => {
+  public getchoice = (avatar: string) => {
+    switch (avatar) {
+      case "Human":
+        return this.Human;
+      case "Elf":
+        return this.Elf;
+      case "Dwarf":
+        return this.Dwarf;
+      default: return [];
+    }
+  }
+
+  public getWindowText = (operation: string, avatar: string) => {
     if (operation === "race") {
       return this.First;
     } else if (operation === "class") {
+      const choice = this.getchoice(avatar);
+      this.Second.choice = choice;
       return this.Second;
     }
     return this.Third;

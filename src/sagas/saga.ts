@@ -14,9 +14,24 @@ function* changeOperation({ payload }: AnyAction) {
   yield put(actions.changeOperationTypeReducer(payload));
 }
 
+function* changeClass({ payload }: AnyAction) {
+  yield put(actions.changeCharacterClassReducer(payload));
+}
+
+function* changeBack({ payload }: AnyAction) {
+  yield put(actions.changeBackgroundReducer(payload));
+}
+
+function* chandeThemeBack({ payload }: AnyAction) {
+  yield put(actions.changeThemeReducer(payload));
+}
+
 export default function* characters() {
   yield all([
     takeEvery(actions.changeCharacterRace, changeRace),
     takeEvery(actions.changeOperationType, changeOperation),
+    takeEvery(actions.changeCharacterClass, changeClass),
+    takeEvery(actions.changeBackground, changeBack),
+    takeEvery(actions.changeTheme, chandeThemeBack),
   ]);
 }
