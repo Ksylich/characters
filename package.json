@@ -8,6 +8,7 @@
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
     "@types/react-radio-group": "^3.0.2",
+    "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-color": "^2.17.3",
     "react-dom": "^16.8.6",
@@ -42,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.9",
     "@types/react-color": "^3.0.1",
     "@types/react-redux": "^7.1.1",
     "@types/react-router-dom": "^4.3.4"

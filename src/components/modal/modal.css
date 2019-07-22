@@ -1,9 +1,9 @@
 .modal-overlay{
     width: 375px;
-    height: 660px;
+    height: 650px;
     position: relative;
-    margin-left: -6px;
-    margin-top: -6px;
+    margin-left: -8px;
+    margin-top: -8px;
    
 }
 .modal-window {

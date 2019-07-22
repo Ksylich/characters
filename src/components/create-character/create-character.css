@@ -92,3 +92,25 @@
 
   color: #ffffff;
 }
+
+
+.back-btn-box {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin-left: 7%;
+  margin-top: 10px;
+  background: #93c2ed;
+  width: 90px;
+}
+
+.create-character-content{
+  position: absolute;
+  width: 375px;
+  height: 237px;
+  left: 0px;
+  top: 430px;
+  
+  background: #FFF9F9;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.25);
+}

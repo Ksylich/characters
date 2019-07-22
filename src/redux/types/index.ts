@@ -1,6 +1,7 @@
 export interface ICharacter {
     race: string;
     class: string;
+    avatar: string;
 }
 
 export  interface ICharactersState {

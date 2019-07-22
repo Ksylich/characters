@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { ChromePicker } from "react-color";
 import { Radio, RadioGroup } from "react-radio-group";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import Gear from "../../assets/gear-24.png";
 import {  changeBackground, changeTheme } from "../../redux/actions";
 import { ChState } from "../../redux/store";
+import Modal from "../modal";
 
 import "./theme.css";
 
@@ -13,6 +15,7 @@ interface IProps {
   avatar: string;
   theme: string;
   background: string;
+  text: any;
   changeBackgroundAction: typeof changeBackground;
   changeThemeAction: typeof changeTheme;
 }
@@ -20,13 +23,21 @@ interface IProps {
 interface IState {
   imageBackground: string;
   contentBackground: string;
+  isOpen: boolean;
 }
 
 class Theme extends Component<IProps, IState> {
   public state = {
     imageBackground: this.props.background,
     contentBackground: this.props.theme,
+    isOpen: true,
   };
+
+  public closeModal = () => {
+    this.setState({
+      isOpen: false,
+    });
+  }
 
   public handleChangeComplete = (color: any) => {
     this.setState({ imageBackground: color.hex });
@@ -44,7 +55,8 @@ class Theme extends Component<IProps, IState> {
   }
 
   public render() {
-    const { avatar } = this.props;
+    const { avatar, text } = this.props;
+    const { modalText } = text;
     const { imageBackground, contentBackground } = this.state;
     const style = {
       imageBack: {
@@ -54,14 +66,14 @@ class Theme extends Component<IProps, IState> {
         backgroundColor: contentBackground,
       },
     };
-
     return (
       <div className="body">
+        <Modal isOpen={this.state.isOpen} onGotIt={this.closeModal} text={modalText} />
         <div className="avatar-container" style={style.imageBack}>
           <img src={avatar} alt="" className="avatar" />
         </div>
         <div className="theme-content" style={style.contentBack}>
-          <div className="text">Theme:</div>
+          <div className="text">Theme:</div> 
           <div className="theme-radio-croup">
             <RadioGroup
               className="theme-group"
@@ -95,10 +107,12 @@ class Theme extends Component<IProps, IState> {
             />
           </div>
 
+          <Link className="lnk" to="/last-page">
           <div className="save-btn-box" onClick={this.onSave}>
             <div className="save">Save</div>
             <img src={Gear} alt="" className="btn-img" />
           </div>
+          </Link>
         </div>
       </div>
     );

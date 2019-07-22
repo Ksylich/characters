@@ -7,10 +7,11 @@ const initialState: ICharactersState = {
   character: {
     race: "Human",
     class: "Warrior",
+    avatar: " ",
   },
   theme: "#FFF9F9",
   background: "#FAFDFB",
-  operationType: "theme",
+  operationType: "race",
 };
 
 const reducer = createReducer(
@@ -20,8 +21,8 @@ const reducer = createReducer(
     return {
       ...state,
       character: {
+        ...character,
         race: payload,
-        class: character.class,
       },
     };
   },
@@ -34,7 +35,7 @@ const reducer = createReducer(
     return {
       ...state,
       character: {
-        race: character.race,
+        ...character,
         class: payload,
       },
     };
@@ -47,6 +48,16 @@ const reducer = createReducer(
     ...state,
     theme: payload,
   }),
+  [actions.changeCharacterAvatarReducer as any]: (state, payload) => {
+    const { character } = state;
+    return {
+      ...state,
+      character: {
+       ...character,
+        avatar: payload,
+      },
+    };
+  },
 }, initialState);
 
 export default reducer;

@@ -26,6 +26,10 @@ function* chandeThemeBack({ payload }: AnyAction) {
   yield put(actions.changeThemeReducer(payload));
 }
 
+function* changeAvatar({ payload }: AnyAction) {
+  yield put(actions.changeCharacterAvatarReducer(payload));
+}
+
 export default function* characters() {
   yield all([
     takeEvery(actions.changeCharacterRace, changeRace),
@@ -33,5 +37,6 @@ export default function* characters() {
     takeEvery(actions.changeCharacterClass, changeClass),
     takeEvery(actions.changeBackground, changeBack),
     takeEvery(actions.changeTheme, chandeThemeBack),
+    takeEvery(actions.changeCharacterAvatar, changeAvatar),
   ]);
 }

@@ -17,8 +17,8 @@ import Human from "../../assets/avatars/human.png";
 import data from "../../data";
 import { ChState } from "../../redux/store";
 import { ICharacter } from "../../redux/types";
+import CreateCharacter from "../create-character";
 import Theme from "../theme";
-import CreateCharacter from "./create-character";
 
 interface IProps {
     operationType: string;
@@ -29,9 +29,9 @@ class CreateCharacterContainer extends Component<IProps> {
     public render() {
 
         const { operationType, character } = this.props;
+        const windowText = data.getWindowText(operationType, character);
         if (operationType !== "theme") {
             let avatars = [Human, Elf, Dwarf];
-            let windowText;
             let showBack = false;
 
             if (operationType === "class") {
@@ -48,10 +48,9 @@ class CreateCharacterContainer extends Component<IProps> {
                         break;
                 }
             }
-            windowText = data.getWindowText(operationType, character.race);
             return <CreateCharacter avatars={avatars} text={windowText} showBack={showBack} />;
         } else {
-            return <Theme avatar={Dwarf_Warrior}/>;
+            return <Theme avatar={character.avatar} text={windowText}/>;
         }
 
     }

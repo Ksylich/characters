@@ -1,7 +1,9 @@
+import { ICharacter } from "../redux/types";
+
 class Data {
-  public Human = [[`"Original"`], [], []];
-  public Elf = [[], [`"Original"`], []];
-  public Dwarf = [["Classic"], [], ["LOL really?"]];
+  public Human = [[`"Original"`], [`"Original"`], [`"Original"`]];
+  public Elf = [["LOL really?"], [`"Original"`], ["LOL really?"]];
+  public Dwarf = [["LOL really?"], [`"Original"`], ["LOL really?"]];
   public First = {
     modalText: {
       number: "The first",
@@ -26,11 +28,15 @@ class Data {
     radioText: ["Warrior", "Dude with bow", "Mage"],
     choice: [[`"Original"`]],
   };
-  public Third = {
-    number: null,
-    type: null,
-    description: "Left a little just choose settings",
-  };
+  public Third = (avatar: ICharacter) => {
+    return ({
+      modalText: {
+        number: `Okay, glad we both chose a ${avatar.class} ${avatar.race} :3 `,
+        type: "",
+        description: "Left a little just choose settings ",
+      },
+    });
+  }
 
   public getchoice = (avatar: string) => {
     switch (avatar) {
@@ -44,15 +50,17 @@ class Data {
     }
   }
 
-  public getWindowText = (operation: string, avatar: string) => {
+  public getWindowText = (operation: string, avatar: ICharacter) => {
     if (operation === "race") {
       return this.First;
     } else if (operation === "class") {
-      const choice = this.getchoice(avatar);
+      const choice = this.getchoice(avatar.race);
       this.Second.choice = choice;
       return this.Second;
+    } else if (operation === "theme") {
+      return this.Third(avatar);
     }
-    return this.Third;
+
   }
 }
 
