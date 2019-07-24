@@ -82,14 +82,14 @@ class Theme extends Component<IProps, IState> {
               selectedValue={contentBackground}
             >
               <div>
-                <Radio value={"#FFF9F9"} id="Day" />
+                <Radio value={"#FFF9F9"} id="onClick" />
                 <label htmlFor="Day" className="radio">
                   Day
                 </label>
               </div>
 
               <div>
-                <Radio value={"#0C0C08"} id="Night" />
+                <Radio value={"#0C0C08"} id="onClick" />
                 <label htmlFor="Night" className="radio">
                   Night
                 </label>
@@ -99,7 +99,7 @@ class Theme extends Component<IProps, IState> {
           <div className="text" id="b-ground">
             Background:
           </div>
-          <div className="color-box">
+          <div className="color-box" id="onClick">
             <ChromePicker
               disableAlpha={true}
               color={imageBackground}
@@ -108,7 +108,7 @@ class Theme extends Component<IProps, IState> {
           </div>
 
           <Link className="lnk" to="/last-page">
-          <div className="save-btn-box" onClick={this.onSave}>
+          <div className="save-btn-box" id="onClick" onClick={this.onSave}>
             <div className="save">Save</div>
             <img src={Gear} alt="" className="btn-img" />
           </div>

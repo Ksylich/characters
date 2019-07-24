@@ -131,7 +131,7 @@ class CreateCharacter extends Component<IProps, IState> {
           text={choice[selected]}
         />
         <div className="avatar-container" style={style.imageBack}>
-          <img src={avatar} alt="" className="avatar" />
+          <img src={avatar} alt="" className="avatar"/>
         </div>
         <div className="create-character-content" style={style.contentBack} >
           <div className="text">{instruction}</div>
@@ -143,34 +143,34 @@ class CreateCharacter extends Component<IProps, IState> {
               selectedValue={selected}
             >
               <div>
-                <Radio value={0} id="blue" />
+                <Radio value={0} id="radio" />
                 <label htmlFor="human" className="radio">
                   {radioText[0]}
                 </label>
               </div>
 
               <div>
-                <Radio value={1} id="green" />
+                <Radio value={1} id="radio" />
                 <label htmlFor="elf" className="radio">
                   {radioText[1]}
                 </label>
               </div>
 
               <div>
-                <Radio value={2} id="red" />
+                <Radio value={2} id="radio" />
                 <label htmlFor="dwarf" className="radio">
                   {radioText[2]}
                 </label>
               </div>
             </RadioGroup>
           </div>
-          <div className="next-btn-box" onClick={this.onNextClick}>
-            <div className="next">Next</div>
+          <div className="next-btn-box" id="onClick" onClick={this.onNextClick}>
+            <div className="next" >Next</div>
             <img src={Arrow} alt="" className="btn-img" />
           </div>
 
           {showBack && (
-            <div className="back-btn-box" id="back" onClick={this.onBackClick}>
+            <div className="back-btn-box" id="back"  onClick={this.onBackClick}>
               <img src={Back} alt="" className="btn-img-back" />
               <div className="back">Back</div>
             </div>

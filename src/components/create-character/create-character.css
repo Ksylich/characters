@@ -1,12 +1,19 @@
 .avatar-container {
   width: 375px;
   height: 430px;
-  background-color:#FAFDFB;
+  background-color: #fafdfb;
+  overflow: hidden;
 }
 .avatar {
-  width: 90%;
+  width: 100%;
   height: 100%;
-  margin-left: 10%;
+  /* margin-left: 10%; */
+  /* object-fit: fill; */
+
+  object-fit: cover;
+  object-position: 15% 0%;
+
+  width: 375px;
 }
 
 .text {
@@ -65,19 +72,18 @@
   color: #ffffff;
 }
 
-.btn-img{
-  margin-top: 8px ;
+.btn-img {
+  margin-top: 8px;
   margin-left: 5px;
 }
 
-.btn-img-back{
-  margin-top: 11px ;
+.btn-img-back {
+  margin-top: 11px;
   margin-left: 8px;
   margin-right: 0px;
 }
 
-
-#back{
+#back {
   margin-left: 7%;
   grid-template-columns: 30% 60%;
 }
@@ -93,7 +99,6 @@
   color: #ffffff;
 }
 
-
 .back-btn-box {
   position: absolute;
   display: grid;
@@ -104,13 +109,20 @@
   width: 90px;
 }
 
-.create-character-content{
+.create-character-content {
   position: absolute;
   width: 375px;
   height: 237px;
   left: 0px;
   top: 430px;
-  
-  background: #FFF9F9;
+
+  background: #fff9f9;
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.25);
+}
+
+#onClick,
+#back,
+#radio,
+#lst:hover {
+  cursor: pointer;
 }

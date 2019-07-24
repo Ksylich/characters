@@ -18,7 +18,7 @@ const MainPage = () => {
       </div>
       <div className="bottom-line" />
       <Link className="lnk" to="/character">
-        <button className="l-start-box">
+        <button className="l-start-box" id="onClick">
           <div className="l-start">Lets start</div>
         </button>
       </Link>

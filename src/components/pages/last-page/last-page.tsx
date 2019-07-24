@@ -12,7 +12,7 @@ interface IProps {
 
 const LastPage: React.FC<IProps> = ({ changeOperationTypeAction }) => {
 
-  const callbackF = useCallback(() => changeOperationTypeAction("race"), []);
+  const callbackF = useCallback(() => changeOperationTypeAction("race"), [changeOperationTypeAction]);
 
   return (
     <div className="body">
@@ -28,7 +28,7 @@ const LastPage: React.FC<IProps> = ({ changeOperationTypeAction }) => {
       </div>
       <div className="bottom-line-last" />
       <Link className="lnk" to="/">
-        <button className="l-start-box" id="lst" onClick={callbackF}>
+        <button className="l-start-box" id="lst"  onClick={callbackF}>
           <div className="l-start">Go again</div>
         </button>
       </Link>

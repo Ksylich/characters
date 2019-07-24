@@ -17,7 +17,7 @@ const ModalLabel: React.FC<IProps> = ({ isOpen, onClose, text  }) => {
       {isOpen && text.length !== 0 && (
       <Portal>
         <div className="modal-label-container">
-          <img src={Clear} alt="" className="clear" onClick={onClose} />
+          <img src={Clear} alt="" className="clear" id="onClick" onClick={onClose} />
           <p>{text[0]}</p>
           <p>{text[1]}</p>
           <p>{text[2]}</p>

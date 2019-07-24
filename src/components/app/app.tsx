@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
 
-// import CreateCharacter from "../create-character-page/create-character";
+import NoMatch from "../no-match";
 
 import { CreateCharecterPage, LastPage, MainPage } from "../pages";
 
@@ -11,6 +11,7 @@ const App = () => (
       <Route path="/" component={MainPage} exact />
       <Route path="/character" component={CreateCharecterPage} />
       <Route path="/last-page" component={LastPage} />
+      <Route component={NoMatch} />
     </Switch>
   </Fragment>
 );
